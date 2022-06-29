@@ -10,11 +10,9 @@ Base = declarative_base()
 
 class User(Base):
     __tablename__ = 'user'
-    # Here we define columns for the table person
-    # Notice that each column is also a normal Python instance attribute.
     id = Column(Integer, primary_key=True)
-    username = Column(String(250), nullable=False)
-    password = Column(String(250), nullable=False)
+    username = Column(String(100), nullable=False)
+    password = Column(String(100), nullable=False)
 
     def serialize(self):
         return{
@@ -55,8 +53,8 @@ class Favorite_Character(Base):
 class Planet(Base):
     __tablename__ = 'planet' 
     id = Column(Integer, primary_key=True)
-    name = Column(String(250))
-    climate = Column(String(250))
+    name = Column(String(100))
+    climate = Column(String(100))
     diameter = Column(Integer)
     population = Column(Integer)
     terrain = Column(Integer)
